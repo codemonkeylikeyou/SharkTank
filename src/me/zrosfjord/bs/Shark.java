@@ -23,8 +23,6 @@ public class Shark extends Entity {
 		if(h == null)
 			return;
 		
-		System.out.println("SHARK UPDATE");
-		
 		int humanX = h.getX();
 		int humanY = h.getY();
 		
@@ -33,8 +31,8 @@ public class Shark extends Entity {
 		
 		for(int x = -1; x <= 1; x++) {
 			for(int y = -1; y <= 1; y++) {
-				int difX = (this.x + x) - humanX;
-				int difY = (this.y + y) - humanY;
+				int difX = Math.abs((this.x + x) - humanX);
+				int difY = Math.abs((this.y + y) - humanY);
 				
 				if(difX + difY < minDif) {
 					minDif = difX + difY;

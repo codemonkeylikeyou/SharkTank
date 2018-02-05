@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Battleship implements Runnable {
 	
-	public static final int BOARD_SIZE = 5;
+	public static int BOARD_SIZE = 5;
 	private List<Entity> entities;
 	
 	private Thread thread;
@@ -18,8 +18,8 @@ public class Battleship implements Runnable {
 	public Battleship() {
 		entities = new ArrayList<Entity>();
 		
-		entities.add(new Human(1, 1));
-		entities.add(new Shark(4, 4));
+		entities.add(new Human(4, 4, false));
+		entities.add(new Shark(0, 3));
 	}
 	
 	public void start() {
@@ -57,7 +57,7 @@ public class Battleship implements Runnable {
 		
 		for(int x = 0; x < BOARD_SIZE; x++) {
 			for(int y = 0; y < BOARD_SIZE; y++) {
-				Point p = new Point(x, y);
+				Point p = new Point(y, x);
 				
 				if(points.containsKey(p)) {
 					Entity ent = points.get(p);
@@ -69,6 +69,8 @@ public class Battleship implements Runnable {
 			
 			System.out.println();
 		}
+		
+		System.out.println("-----------------------------------");
 	}
 	
 	
