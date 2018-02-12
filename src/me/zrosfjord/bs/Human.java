@@ -14,7 +14,7 @@ public class Human extends Entity {
 	private boolean input;
 	private Scanner scanner;
 	
-	public Human(int x, int y, boolean input) {
+	public Human(int x, int y, boolean input) { //constructor
 		super(x, y, 'h');
 		this.input = input;
 		
@@ -22,7 +22,7 @@ public class Human extends Entity {
 	}
 
 	@Override
-	public void update(List<Entity> entities) {
+	public void update(List<Entity> entities) { //update human move
 		if(input) {
 			System.out.print("Move Human (delta x, delta y): ");
 			
