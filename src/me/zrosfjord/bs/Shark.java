@@ -10,7 +10,7 @@ public class Shark extends Entity {
 	}
 
 	@Override
-	public void update(List<Entity> entities) {
+	public void update(List<Entity> entities) { //update shark moves
 		Human h = null;
 		
 		for(int x = 0; x < entities.size(); x++) {
