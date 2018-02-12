@@ -8,7 +8,7 @@ public abstract class Entity {
 	protected char icon;
 	protected boolean alive = true;
 	
-	public Entity(int x, int y, char icon){
+	public Entity(int x, int y, char icon){ //constructor
 		this.x = x;
 		this.y = y;
 		this.icon = icon;
@@ -17,7 +17,7 @@ public abstract class Entity {
 	public abstract void update(List<Entity> entities);
 	
 	
-	public boolean move(int moveX, int moveY) {
+	public boolean move(int moveX, int moveY) { //checking each move
 		if(x + moveX < 0 || x + moveX >= Battleship.BOARD_SIZE) {
 			return false;
 		} else if(y + moveY < 0 || y + moveY >= Battleship.BOARD_SIZE) {
@@ -29,7 +29,7 @@ public abstract class Entity {
 		}
 	}
 	
-	public Entity collision(List<Entity> entities) {
+	public Entity collision(List<Entity> entities) { //checking if collision has happened
 		for(int i = 0; i < entities.size(); i++) {
 			Entity e = entities.get(i);
 			if(e == this)
@@ -43,11 +43,11 @@ public abstract class Entity {
 	}
 	
 
-	public int getX() {
+	public int getX() { //returning x co-ordinates
 		return x;
 	}
 
-	public int getY() {
+	public int getY() { //returning y co-ordinates
 		return y;
 	}
 	
@@ -55,7 +55,7 @@ public abstract class Entity {
 		return icon;
 	}
 
-	public boolean isAlive() {
+	public boolean isAlive() { //checking flag value
 		return alive;
 	}
 
